@@ -38,6 +38,15 @@ install_ondemand_dex: false
 # package to install (ondemand-dex-2.32.0)
 ondemand_dex_package: ondemand-dex
 
+#flip this flag if you want to install the ondemand-selinux RPM
+install_ondemand_selinux: false
+# This will default to latest ondemand-selinux package if install_ondemand_selinux
+# is set to true, to control the version installed add the version of the 
+# package to install (ondemand-selinux-2.32.0)
+ondemand_selinux_package: ondemand-selinux
+
+#On Demand SELINUX variables below
+
 # needed for testing. no reason to change these in production.
 disable_htcacheclean: false
 nodejs_version: 14
