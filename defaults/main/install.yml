@@ -46,6 +46,18 @@ install_ondemand_selinux: false
 ondemand_selinux_package: ondemand-selinux
 
 #On Demand SELINUX variables below
+#ondemand_manage_user_home_dir: false
+#ondemand_manage_vmblock: false
+#ondemand_use_nfs: true
+#ondemand_use_ssh: true
+#ondemand_use_sssd: true
+#ondemand_use_slurm: false
+#ondemand_use_torque: false
+#ondemand_use_kubernetes: false
+#ondemand_use_ldap: false
+#ondemand_use_kerberos: false
+
+
 
 # needed for testing. no reason to change these in production.
 disable_htcacheclean: false
