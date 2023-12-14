@@ -1,4 +1,22 @@
 ---
+- name: Set the SELinux boolean constraints
+  ansible.builtin.command:
+    argv:
+      - /usr/sbin/setsebool 
+      - -P
+      - "ondemand_manage_user_home_dir={{ ondemand_manage_user_home_dir }}"
+      - "ondemand_manage_vmblock={{ ondemand_manage_vmblock }}"
+      - "ondemand_use_nfs={{ ondemand_use_nfs }}"
+      - "ondemand_use_ssh={{ ondemand_use_ssh }}"
+      - "ondemand_use_sssd={{ ondemand_use_sssd }}"
+      - "ondemand_use_slurm={{ ondemand_use_slurm }}"
+      - "ondemand_use_torque={{ ondemand_use_torque }}"
+      - "ondemand_use_kubernetes={{ ondemand_use_kubernetes }}"
+      - "ondemand_use_ldap={{ ondemand_use_ldap }}"
+      - "ondemand_use_kerberos={{ ondemand_use_kerberos }}"
+  when: install_ondemand_selinux
+  become: true
+
 - name: Restart apache httpd
   ansible.builtin.systemd:
     name: "{{ apache_service_name }}"
